@@ -8,5 +8,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'draw-with-me';
+  width = 800;
+  height = 800;
+  constructor() { }
 }
