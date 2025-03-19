@@ -1,2 +1,3 @@
-<canvas id="canvas" [width]="width" [height]="height"></canvas>
+<canvas id="whiteboard" #whiteboard [width]="width" [height]="height" (mousedown)="draw($event)"></canvas>
+<button (click)="clearCanvas()">Clear</button>
 <router-outlet></router-outlet>
