@@ -1,3 +1,9 @@
 <canvas id="whiteboard" #whiteboard [width]="width" [height]="height" (mousedown)="draw($event)"></canvas>
+<label>
+  Stroke Width
+  <span>{{strokePx()}}px</span>
+  <!-- Can I set the initial value? -->
+  <input type="range" [min]="strokeMin" [max]="strokeMax" (input)="updateStroke($event)" />
+</label>
 <button (click)="clearCanvas()">Clear</button>
 <router-outlet></router-outlet>
