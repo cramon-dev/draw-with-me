@@ -7,7 +7,7 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements AfterViewInit, AfterViewChecked {
+export class AppComponent {
   width = 800;
   height = 800;
   strokeMin = 1;
@@ -18,14 +18,6 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
 
   constructor() { }
 
-  ngAfterViewInit(): void {
-    console.info('after view init');
-  }
-
-  ngAfterViewChecked(): void {
-    console.info('view checked');
-  }
-
   draw(event: MouseEvent): void {
     const context = this.canvas.nativeElement.getContext("2d");
     const x = event.offsetX - (this.strokePx() / 2);
@@ -35,7 +27,7 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
 
   clearCanvas(): void {
     const context = this.canvas.nativeElement.getContext("2d")!;
-    context?.reset(); // Not sure why getContext can be null unless it's not supported by the browser
+    context.reset();
   }
 
   updateStroke(event: Event): void {
