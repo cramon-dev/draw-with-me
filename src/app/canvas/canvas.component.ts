@@ -13,10 +13,13 @@ export class CanvasComponent {
 
   constructor() {}
   
-  // draw(event: MouseEvent): void {
-  //   const context = this.canvas.nativeElement.getContext("2d");
-  //   const x = event.offsetX - (this.strokePx() / 2);
-  //   const y = event.offsetY - (this.strokePx() / 2);
-  //   context?.fillRect(x, y, this.strokePx(), this.strokePx());
-  // }
+  draw(event: MouseEvent): void {
+    const context = this.canvas.nativeElement.getContext("2d");
+    // TODO - how should I make stroke width/height available here?
+    // const x = event.offsetX - (this.strokePx() / 2);
+    // const y = event.offsetY - (this.strokePx() / 2);
+    // context?.fillRect(x, y, this.strokePx(), this.strokePx());
+    // TODO - for now, hard code stroke
+    context?.fillRect(event.offsetX, event.offsetY, 5, 5);
+  }
 }
