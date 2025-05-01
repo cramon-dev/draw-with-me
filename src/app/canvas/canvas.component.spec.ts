@@ -17,7 +17,9 @@ describe('CanvasComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should initialize with 800px width and 800px height', () => {
+    expect(component.width).toBe(800);
+    expect(component.height).toBe(800);
     expect(component).toBeTruthy();
   });
 });
