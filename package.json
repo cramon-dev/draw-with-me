@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:draw-with-me": "node dist/draw-with-me/server/server.mjs"
+    "test:prod": "ng test --watch=false",
+    "serve:ssr:draw-with-me": "node dist/draw-with-me/server/server.mjs",
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +34,7 @@
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
+    "husky": "^9.1.7",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
