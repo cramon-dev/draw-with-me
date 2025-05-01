@@ -1,9 +1,3 @@
-<app-canvas [width]="width" [height]="height"></app-canvas>
-<label>
-  Stroke Width
-  <span>{{strokePx()}}px</span>
-  <!-- Can I set the initial value? -->
-  <input type="range" [min]="strokeMin" [max]="strokeMax" (input)="updateStroke($event)" />
-</label>
-<button (click)="clearCanvas()">Clear</button>
+<app-toolbar></app-toolbar>
+<app-canvas></app-canvas>
 <router-outlet></router-outlet>

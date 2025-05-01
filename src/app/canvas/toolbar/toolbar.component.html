@@ -1,1 +1,7 @@
-<p>toolbar works!</p>
+<label>
+    Stroke Width
+    <span>{{strokePx()}}px</span>
+    <!-- Can I set the initial value? -->
+    <input type="range" [min]="strokeMin" [max]="strokeMax" (input)="updateStroke($event)" />
+  </label>
+  <button (click)="clearCanvas()">Clear</button>
