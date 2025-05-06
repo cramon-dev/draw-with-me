@@ -1,10 +1,14 @@
 {
   "name": "draw-with-me",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration production",
+    "build:docker-arm64": "docker build -t draw-with-me-arm64 .",
+    "build:docker-amd64": "docker buildx build --platform linux/amd64 -t draw-with-me-amd64 .",
+    "run:docker-arm64": "docker run -d -p 8080:8080 draw-with-me-arm64 ",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:prod": "ng test --watch=false",
