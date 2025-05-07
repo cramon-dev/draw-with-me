@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --configuration development",
     "build": "ng build",
     "build:prod": "ng build --configuration production",
-    "build:docker-arm64": "docker build -t draw-with-me-arm64 .",
+    "build:docker-arm64": "docker buildx build --platform linux/arm64 -t draw-with-me-arm64 .",
     "build:docker-amd64": "docker buildx build --platform linux/amd64 -t draw-with-me-amd64 .",
     "run:docker-arm64": "docker run -d -p 8080:8080 draw-with-me-arm64",
     "run:docker-amd64": "docker run -d -p 8080:8080 draw-with-me-amd64",
