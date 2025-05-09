@@ -1,7 +1,11 @@
 <label>
     Stroke Width
-    <span>{{strokePx()}}px</span>
-    <!-- Can I set the initial value? -->
-    <input type="range" [min]="strokeMin" [max]="strokeMax" (input)="updateStroke($event)" />
+    <span>{{strokePx}}px</span>
+    <input
+      data-testid="strokeWidth"
+      type="number"
+      [min]="strokeMin"
+      [max]="strokeMax"
+      [value]="strokePx"
+      (input)="updateStroke($event)" />
   </label>
-  <button (click)="clearCanvas()">Clear</button>
